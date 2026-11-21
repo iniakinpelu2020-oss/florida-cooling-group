@@ -4,7 +4,7 @@ const CFG = {
   town: "Delray Beach, FL",
   phone: "+15614002205",
   phoneText: "+1 561-400-2205",
-  mode: "us",
+  mode: "us",             // "us" -> sms:, "ng" -> wa.me
   rating: "5.0",
   reviews: 83,
   area: "Delray · Boca · Boynton"
@@ -81,6 +81,7 @@ const SCHED = [
 const $ = (s) => document.querySelector(s);
 const money = (n) => (n === 0 ? "Free" : "$" + n);
 
+/* ---------- marquee ---------- */
 (function marquee() {
   const bits = [
     "Same-day heat dispatch",
@@ -93,6 +94,7 @@ const money = (n) => (n === 0 ? "Free" : "$" + n);
   $("#strip").innerHTML = one + one;
 })();
 
+/* ---------- price list ---------- */
 (function menu() {
   $("#pricelist").innerHTML = SERVICES.map((s) => {
     const price = s.price === 0 ? "Free consult" : "From $" + s.price;
@@ -103,6 +105,7 @@ const money = (n) => (n === 0 ? "Free" : "$" + n);
   }).join("");
 })();
 
+/* ---------- hours ---------- */
 (function hours() {
   const today = new Date().toLocaleDateString("en-US", { weekday: "short", timeZone: "America/New_York" });
   document.querySelectorAll("#hoursList li").forEach((li) => {
@@ -111,6 +114,7 @@ const money = (n) => (n === 0 ? "Free" : "$" + n);
   $("#yr").textContent = String(new Date().getFullYear());
 })();
 
+/* ---------- gallery ---------- */
 const stage = $("#stage"), dotsEl = $("#dots"), catsEl = $("#cats");
 const cats = ["All", ...Array.from(new Set(SERVICES.map((s) => s.cat)))];
 let filter = "All";
@@ -143,6 +147,7 @@ function buildCards() {
   cards = list.map((s, i) => {
     const el = document.createElement("article");
     el.className = "gcard";
+    el.style.setProperty("--i", i);
     el.setAttribute("role", "button");
     el.setAttribute("tabindex", "0");
     el.innerHTML =
@@ -191,6 +196,7 @@ function go(n) {
 $("#prev").addEventListener("click", () => go(-1));
 $("#next").addEventListener("click", () => go(1));
 
+/* pointer drag + tap */
 let down = false, startX = 0, moved = 0, downCard = -1;
 stage.addEventListener("pointerdown", (e) => {
   down = true; startX = e.clientX; moved = 0;
@@ -224,6 +230,7 @@ window.addEventListener("pointerup", () => {
 });
 window.addEventListener("resize", render);
 
+/* ---------- configurator ---------- */
 let current = 0;
 let opts = { size: 0, cond: 0, sched: 0 };
 
@@ -294,6 +301,7 @@ $("#backBtn").addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "auto" });
 });
 
+/* ---------- cart / drawer ---------- */
 let cart = [];
 
 function openDrawer() {
@@ -370,6 +378,14 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeDrawer();
 });
 
+/* ---------- start-up curtain ---------- */
+(function intro() {
+  const el = document.getElementById("intro");
+  if (!el) return;
+  setTimeout(() => el.remove(), 2600);
+})();
+
+/* ---------- boot ---------- */
 buildCats();
 buildCards();
 render();
