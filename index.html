@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Florida Cooling Group — Same-Day AC Repair, Delray Beach FL</title>
+<meta name="description" content="Licensed HVAC repair, tune-ups and AC replacement across Delray Beach, Boca Raton, Boynton Beach and Palm Beach County. Same-day heat dispatch.">
+<meta name="theme-color" content="#0a1f2b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="grain"></div>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#top"><span class="mark">FC</span> Florida Cooling <small>Delray Beach</small></a>
+    <nav class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#prices">Prices</a>
+      <a href="#hours">Hours</a>
+    </nav>
+    <div class="top-actions">
+      <a class="btn btn-line hide-sm" href="tel:+15614002205">+1 561-400-2205</a>
+      <button class="btn btn-ink cart-pill" id="openEstimate" type="button">
+        Estimate <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span>HVAC</span> Delray Beach · Palm Beach County</p>
+        <h1>Cold air back on.<br><em>Usually the same day.</em></h1>
+        <p class="lede">Licensed techs, stocked trucks and honest diagnostics — from a tune-up that keeps July cheap to a full system swap before the humidity wins.</p>
+        <div class="hero-cta">
+          <a class="btn btn-blue" href="tel:+15614002205">Book same-day dispatch</a>
+          <a class="btn btn-line" href="sms:+15614002205">Text the office</a>
+        </div>
+        <div class="ratecard">
+          <span class="score">5.0</span>
+          <div>
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <b>83 Google reviews</b>
+            <small>Delray · Boca · Boynton · Palm Beach</small>
+          </div>
+        </div>
+      </div>
+
+      <figure class="hero-art">
+        <span class="sticker">Same-day heat dispatch</span>
+        <img src="https://images.unsplash.com/photo-1667983453881-4992fe86ab1b?auto=format&fit=crop&w=1000&q=75" alt="Outdoor air conditioning condenser unit on a wall" onerror="this.style.visibility='hidden'">
+        <figcaption>Mon–Sat · 7:30 AM – 7:00 PM</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-in" id="strip"></div>
+  </div>
+
+  <section class="gal wrap" id="services">
+    <div class="gal-top">
+      <div>
+        <p class="index">(01) Services</p>
+        <h2>The wall</h2>
+      </div>
+      <div class="pills" id="cats" role="group" aria-label="Filter services"></div>
+    </div>
+    <p class="gal-hint">Drag the wall, use the arrows, or tap the card in the middle.</p>
+
+    <div class="stage-wrap">
+      <div class="stage" id="stage" role="group" aria-label="Service gallery"></div>
+    </div>
+
+    <div class="ctl-row">
+      <button class="ctl" id="prev" type="button" aria-label="Previous service">←</button>
+      <div class="dots" id="dots"></div>
+      <button class="ctl" id="next" type="button" aria-label="Next service">→</button>
+    </div>
+  </section>
+
+  <section class="detail wrap" id="detail">
+    <button class="back" id="backBtn" type="button">← Back to the wall</button>
+    <div class="cfg">
+      <div class="cfg-media">
+        <img id="cfgImg" src="" alt="">
+        <span class="cfg-tag" id="cfgCat">Service</span>
+      </div>
+      <div class="cfg-body">
+        <p class="index" id="cfgIndex">(01)</p>
+        <h2 id="cfgName">Service</h2>
+        <p class="cfg-desc" id="cfgDesc"></p>
+        <div class="cfg-facts">
+          <span id="cfgTime">≈ 2 hrs on site</span>
+          <span id="cfgTown">Delray Beach</span>
+        </div>
+
+        <div class="opt-group">
+          <h4>Home size</h4>
+          <div class="opt-row" id="optSize"></div>
+        </div>
+        <div class="opt-group">
+          <h4>System</h4>
+          <div class="opt-row" id="optCond"></div>
+        </div>
+        <div class="opt-group">
+          <h4>When</h4>
+          <div class="opt-row" id="optSched"></div>
+        </div>
+
+        <div class="buy">
+          <div class="price"><span>Live estimate</span><b id="livePrice">$0</b></div>
+          <button class="btn btn-blue" id="addBtn" type="button">Add to estimate</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="more">
+      <p class="index">(02) Keep looking</p>
+      <div class="more-grid" id="moreGrid"></div>
+    </div>
+  </section>
+
+  <section class="menu" id="prices">
+    <div class="wrap">
+      <p class="index">(03) Price list</p>
+      <h2>Flat prices, printed plainly.</h2>
+      <p class="menu-lede">What we quote is what you pay. Diagnostics come off the bill when you go ahead with the repair.</p>
+      <ul class="pricelist" id="pricelist"></ul>
+      <div class="menu-cta">
+        <a class="btn btn-blue" href="tel:+15614002205">Call the office</a>
+        <button class="btn btn-line" id="openEstimate2" type="button">Open my estimate</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps-sec">
+    <div class="wrap">
+      <p class="index">(04) How a visit runs</p>
+      <div class="steps">
+        <article class="step">
+          <span class="num">01</span>
+          <h3>Call or text</h3>
+          <p>Tell us what the house is doing — warm air, ice on the line, water in the pan. We book a window, usually within the day.</p>
+        </article>
+        <article class="step">
+          <span class="num">02</span>
+          <h3>We diagnose in plain English</h3>
+          <p>Pressures, amp draw, coil condition and airflow get checked properly. You get the fault and the price before any work starts.</p>
+        </article>
+        <article class="step">
+          <span class="num">03</span>
+          <h3>Repair or replace, your call</h3>
+          <p>If a repair is the honest answer we do the repair. If it's time for a system, you get both numbers side by side and no pressure.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-sec" id="hours">
+    <div class="wrap info-grid">
+      <div class="panel">
+        <p class="index">(05) Hours</p>
+        <ul class="hours" id="hoursList">
+          <li data-day="Mon"><span>Monday</span><span>7:30 AM – 7:00 PM</span></li>
+          <li data-day="Tue"><span>Tuesday</span><span>7:30 AM – 7:00 PM</span></li>
+          <li data-day="Wed"><span>Wednesday</span><span>7:30 AM – 7:00 PM</span></li>
+          <li data-day="Thu"><span>Thursday</span><span>7:30 AM – 7:00 PM</span></li>
+          <li data-day="Fri"><span>Friday</span><span>7:30 AM – 7:00 PM</span></li>
+          <li data-day="Sat"><span>Saturday</span><span>7:30 AM – 7:00 PM</span></li>
+          <li data-day="Sun" class="off"><span>Sunday</span><span>Emergency line only</span></li>
+        </ul>
+        <p class="tiny">Eastern time. Same-day dispatch is subject to route, and we tell you straight when it's not possible.</p>
+      </div>
+
+      <div class="panel">
+        <p class="index">(06) Where we drive</p>
+        <div class="chips">
+          <span>Delray Beach</span><span>Boca Raton</span><span>Boynton Beach</span><span>Palm Beach County</span>
+        </div>
+        <p class="index" style="margin-top:26px">(07) What people say</p>
+        <ul class="quotes">
+          <li>Honest licensed diagnostics across Delray Beach, Boca Raton and Palm Beach County.</li>
+          <li>Fast same-day cooling restoration when the house has gone warm.</li>
+          <li>Clear repair-or-replace numbers, no surprise add-ons.</li>
+        </ul>
+        <a class="btn btn-ink" href="tel:+15614002205" style="margin-top:20px">Call +1 561-400-2205</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <a class="brand" href="#top"><span class="mark">FC</span> Florida Cooling <small>Delray Beach</small></a>
+        <p>Licensed HVAC repair, maintenance and replacement across Delray Beach, Boca Raton, Boynton Beach and Palm Beach County.</p>
+      </div>
+      <div class="foot-right">
+        <a href="tel:+15614002205">+1 561-400-2205</a>
+        <small>Mon–Sat · 7:30 AM – 7:00 PM ET</small>
+        <small>© <span id="yr">2026</span> Florida Cooling Group</small>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Your estimate">
+  <div class="drawer-top">
+    <h3>Your estimate</h3>
+    <button class="x" id="closeDrawer" type="button" aria-label="Close">✕</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot">
+    <div class="total"><span>Estimated total</span><b id="total">$0</b></div>
+    <a class="btn btn-blue btn-block" id="callBtn" href="tel:+15614002205">Call to book · +1 561-400-2205</a>
+    <a class="btn btn-line btn-block" id="textBtn" href="sms:+15614002205">Text this estimate</a>
+    <p class="fine">Estimate only. Final price is confirmed on site once the system is checked.</p>
+  </div>
+</aside>
+
+<div class="toast" id="toast">Added to your estimate</div>
+
+<div class="mbar">
+  <a class="btn btn-blue" href="tel:+15614002205">Call</a>
+  <button class="btn btn-ink cart-pill" id="openEstimate3" type="button">Estimate <span class="cart-count" id="cartCount2">0</span></button>
+</div>
+
+<script src="/app.js" defer></script>
+</body>
+</html>
